@@ -1,0 +1,21 @@
+package picmap;
+
+import java.io.IOException;
+
+import javax.servlet.http.*;
+import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
+import com.google.appengine.api.blobstore.BlobstoreService;
+
+
+@SuppressWarnings("serial")
+public class Upload extends HttpServlet {
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+		blobstoreService.createUploadUrl("/traitement");
+		
+
+            
+		
+	}
+}
